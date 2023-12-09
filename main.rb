@@ -79,7 +79,7 @@ def loading!
   end
 end
 
-$logo = " \n#{$w}█████████\n#{$w}█▄█████▄█      #{$c}●▬▬▬▬▬▬▬▬▬๑🔱๑▬▬▬▬▬▬▬▬●\n#{$w}█#{$r}▼▼▼▼▼ #{$w}- _ --_--#{$g}╔╦╗┌─┐┬─┐┬┌─   ╔═╗╔╗ \n#{$w}█ #{$w} #{$w}_-_-- -_ --__#{$g} ║║├─┤├┬┘├┴┐───╠╣ ╠╩╗\n#{$w}█#{$r}▲▲▲▲▲#{$w}--  - _ --#{$g}═╩╝┴ ┴┴└─┴ ┴   ╚  ╚═╝ #{$y}ELITE v1.2\n#{$w}█████████      #{$c}●▬▬▬▬▬▬▬▬▬๑🔱๑▬▬▬▬▬▬▬▬●\n#{$w} ██ ██\n#{$w}╔════════════════════════════════════════╗\n#{$w}║#{$y}* #{$w}Author  #{$r}: #{$c}Rahmat & Khaneysia#{$w}          ║\n#{$w}║#{$y}* #{$w}Github  #{$r}: #{$c}github.com/MR-X-Junior/#{$w}     ║\n#{$w}║#{$y}* #{$w}Wa      #{$r}: #{$c}+62 85754629509   #{$w}          ║\n#{$w}║#{$y}* #{$w}#{RUBY_ENGINE}#{' '*(8 - RUBY_ENGINE.length)}#{$r}: #{$c}#{RUBY_VERSION}   #{$w}                    ║\n#{$w}║#{$y}* #{$w}Version #{$r}: #{$c}1.2                         #{$w}║\n#{$w}╚════════════════════════════════════════╝#{$a}"
+$logo = " \n#{$w}█████████\n#{$w}█▄█████▄█      #{$c}●▬▬▬▬▬▬▬▬▬๑🔱๑▬▬▬▬▬▬▬▬●\n#{$w}█#{$r}▼▼▼▼▼ #{$w}- _ --_--#{$g}malaki  \n#{$w}█ #{$w} #{$w}_-_-- -_ --__#{$g} tite ko \n#{$w}█#{$r}▲▲▲▲▲#{$w}--  - _ --#{$g}12 inch #{$y} v2.2\n#{$w}█████████      #{$c}●▬▬▬▬▬▬▬▬▬๑🔱๑▬▬▬▬▬▬▬▬●\n#{$w} ██ ██\n#{$w}╔════════════════════════════════════════╗\n#{$w}║#{$y}* #{$w}Author  #{$r}: #{$c}shiki#{$w}          ║\n#{$w}║#{$y}* #{$w}replit  #{$r}: #{$c}replit.com/hayih59124/#{$w}     ║\n#{$w}║#{$y}* #{$w}Fb      #{$r}: #{$c}Shikimachina  #{$w}          ║\n#{$w}║#{$y}* #{$w}#{Wrapmodi}#{' '*(8 - RUBY_ENGINE.length)}#{$r}: #{$c}#{RUBY_VERSION}   #{$w}                    ║\n#{$w}║#{$y}* #{$w}Version #{$r}: #{$c}1.2                         #{$w}║\n#{$w}╚════════════════════════════════════════╝#{$a}"
 $user_agent = "Mozilla/5.0 (Linux; Android 9; SM-N976V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.89 Mobile Safari/537.36"
 $indonesia = false
 
@@ -418,7 +418,7 @@ def menu()
   puts ("#{$w}║#{$r}[#{$c}✓#{$r}] #{$w}Name : #{$g}" + $name + " "*(39 - $name.length()) + "#{$w}║")
   puts ("#{$w}║#{$r}[#{$c}✓#{$r}] #{$w}FBID : #{$g}" + $id + " "*(39 - $id.length()) + "#{$w}║")
   puts ("#{$w}╠══════════════════════════════════════════════════╝")
-  puts ("║-> #{$w}1. MyFrofil")
+  puts ("║-> #{$w}1. MyProfile")
   puts ("║-> #{$w}2. User Information")
   puts ("║-> #{$w}3. Hack Facebook Account")
   puts ("║-> #{$w}4. Bot")
@@ -526,11 +526,11 @@ def Info()
   if a.key? ('error')
     puts ("#{$y}[!] User Not Found")
   else
-    puts ("#{$w}[+] Pleace Wait")
+    puts ("#{$w}[+] Please Wait")
     puts ("#{$w}#{'═'*52}")
     temen = (a.key? ('friends')) ? a['friends']['data'].to_a.length.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse : 0
     ikuti = (a.key? ('subscribers')) ? a['subscribers']['summary']['total_count'].to_s.reverse.gsub(/...(?=.)/,'\&,').reverse : 0
-    mengikuti = (a.key? ('subscribedto')) ? a['subscribedto']['summary']['total_count'].to_s.reverse.gsub(/...(?=.)/,'\&,').reverse : 0
+    mengikuti = (a.key? ('subscribe')) ? a['subscribe']['summary']['total_count'].to_s.reverse.gsub(/...(?=.)/,'\&,').reverse : 0
     suka = (a.key? ('likes')) ? a['likes']['summary']['total_count'].to_s.reverse.gsub(/...(?=.)/,'\&,').reverse : 0
     puts ("#{$g}[✓] Name : #{a['name']}")
     puts ("#{$g}[✓] Id : #{a['id']}")
@@ -898,7 +898,7 @@ def Super()
         puts ("#{$r}[!] User Not Found")
         print ("\n#{$r}[#{$g}Back#{$r}] #{$a}") ; gets
         Super()
-      elsif !a.key? ('subscribedto')
+      elsif !a.key? ('subscribe')
         puts ("#{$y}[!] No following on account")
         print ("\n#{$r}[#{$g}Back#{$r}] #{$a}") ; gets
         Super()
@@ -908,7 +908,7 @@ def Super()
         puts ("#{$y}[!] Total ID that can be cracked : #{a['subscribedto']['data'].length}") if a['subscribedto']['data'].length != a['subscribedto']['summary']['total_count']
         puts ("#{$w}[+] CRACK!")
         puts ("#{$w}#{'═'*52}")
-        main(a['subscribedto']['data'])
+        main(a['subscribe']['data'])
         puts ("#{$w}#{'═'*52}")
         puts ("#{$g}[✓] Total OK : #{$ok}")
         puts ("#{$y}[!] Total CP : #{$cp}")
@@ -1113,7 +1113,7 @@ def GetMenu()
       system ('clear')
       puts ($logo)
       puts ("#{$w}#{'═'*52}")
-      tik ("#{$w}[+] Pleace Wait....")
+      tik ("#{$w}[+] Please Wait....")
       a = Request("me/friends?")
       abort ("#{$r}[!] Invalid Access Token") if a.key? ('error')
       print ("#{$w}[+] Save File (file.txt) : ")
@@ -1499,18 +1499,18 @@ def React()
     puts ("#{$w}║-> #{$r}6. ANGRY")
     puts ("#{$w}║")
     print ("╚═#{$r}▶#{$w} ")
-    pilih = gets.chomp!
-    if pilih == '1' or pilih == '01'
+    select = gets.chomp!
+    if select == '1' or select == '01'
       return 'LIKE'
-    elsif pilih == '2' or pilih == '02'
+    elsif select == '2' or select == '02'
       return 'LOVE'
-    elsif pilih == '3' or pilih == '03'
+    elsif select == '3' or select == '03'
       return 'HAHA'
-    elsif pilih == '4' or pilih == '04'
+    elsif select == '4' or select == '04'
       return 'WOW'
-    elsif pilih == '5' or pilih == '05'
+    elsif select == '5' or select == '05'
       return 'SAD'
-    elsif pilih == '6' or pilih == '06'
+    elsif select == '6' or select == '06'
       return 'ANGRY'
     else
       puts ("#{$y}[!] Invalid Input")
